@@ -13,7 +13,7 @@ Most storage wrappers give you a getter/setter pair and leave persistence, encry
 ## Install
 
 ```bash
-npm i @ngx-vault/local-vault
+npm i ngx-local-vault
 ```
 
 Supports Angular `17`, `18`, `19`, and `20`.
@@ -22,7 +22,7 @@ Supports Angular `17`, `18`, `19`, and `20`.
 
 ```ts
 import { ApplicationConfig } from '@angular/core';
-import { provideVault } from '@ngx-vault/local-vault';
+import { provideVault } from 'ngx-local-vault';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -35,7 +35,7 @@ export const appConfig: ApplicationConfig = {
 
 ```ts
 import { inject } from '@angular/core';
-import { VaultService } from '@ngx-vault/local-vault';
+import { VaultService } from 'ngx-local-vault';
 
 const vault = inject(VaultService);
 
@@ -59,7 +59,7 @@ npm run build:lib
 npm start
 ```
 
-`npm start` serves `demo-app`; the library must be built first since the app imports `@ngx-vault/local-vault` from its built output (`dist/ngx-local-vault`), not the source directly — standard Angular library-workspace convention.
+`npm start` serves `demo-app`; the library must be built first since the app imports `ngx-local-vault` from its built output (`dist/ngx-local-vault`), not the source directly — standard Angular library-workspace convention.
 
 ## Publishing (maintainer)
 

@@ -8,7 +8,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "@ngx-vault/local-vault": [
+      "ngx-local-vault": [
         "./dist/ngx-local-vault"
       ]
     },

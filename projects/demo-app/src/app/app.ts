@@ -1,6 +1,6 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { JsonPipe } from '@angular/common';
-import { VaultService } from '@ngx-vault/local-vault';
+import { VaultService } from 'ngx-local-vault';
 
 interface DemoProfile {
   name: string;
