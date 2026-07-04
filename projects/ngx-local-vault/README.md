@@ -4,6 +4,7 @@ Reactive, encrypted browser storage for Angular — built on Signals, under 2KB 
 
 **Live demo:** https://ysndmr.github.io/ngx-local-vault/
 **Source:** https://github.com/ysndmr/ngx-local-vault
+**Also available for:** [React](https://github.com/ysndmr/react-local-vault) ([npm](https://www.npmjs.com/package/react-local-vault) · [demo](https://ysndmr.github.io/react-local-vault/)) · [Vue](https://github.com/ysndmr/vue-local-vault) ([npm](https://www.npmjs.com/package/vue-local-vault) · [demo](https://ysndmr.github.io/vue-local-vault/))
 
 ## Install
 

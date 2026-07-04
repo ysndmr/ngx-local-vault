@@ -2,6 +2,8 @@
 
 Reactive, encrypted browser storage for Angular — built on Signals, under 2KB gzipped, zero runtime dependencies.
 
+**Also available for:** [React](https://github.com/ysndmr/react-local-vault) ([npm](https://www.npmjs.com/package/react-local-vault) · [demo](https://ysndmr.github.io/react-local-vault/)) · [Vue](https://github.com/ysndmr/vue-local-vault) ([npm](https://www.npmjs.com/package/vue-local-vault) · [demo](https://ysndmr.github.io/vue-local-vault/))
+
 Most storage wrappers give you a getter/setter pair and leave persistence, encryption, and expiry as an exercise for the consumer. `ngx-local-vault` collapses all three into a single `WritableSignal`: read it like any other signal, write it like any other signal, and the library takes care of encrypting the payload, syncing it to `localStorage` or `sessionStorage`, expiring it on a TTL, and staying inert during SSR.
 
 - **Signals-native** — `watchSignal()` returns a real `WritableSignal<T>`, no wrapper API to learn
