@@ -5,7 +5,7 @@ Reactive, encrypted browser storage for Angular — built on Signals, under 2KB 
 ## Install
 
 ```bash
-npm i ngx-local-vault
+npm i @ngx-vault/local-vault
 ```
 
 Supports Angular `17`, `18`, `19`, and `20`.
@@ -14,7 +14,7 @@ Supports Angular `17`, `18`, `19`, and `20`.
 
 ```ts
 import { ApplicationConfig } from '@angular/core';
-import { provideVault } from 'ngx-local-vault';
+import { provideVault } from '@ngx-vault/local-vault';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
 
 ```ts
 import { inject } from '@angular/core';
-import { VaultService } from 'ngx-local-vault';
+import { VaultService } from '@ngx-vault/local-vault';
 
 const vault = inject(VaultService);
 

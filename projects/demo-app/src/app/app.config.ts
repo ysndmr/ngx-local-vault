@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideVault } from 'ngx-local-vault';
+import { provideVault } from '@ngx-vault/local-vault';
 
 export const appConfig: ApplicationConfig = {
   providers: [
