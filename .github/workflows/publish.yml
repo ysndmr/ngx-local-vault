@@ -83,6 +83,7 @@ jobs:
 
       - name: Publish to npm
         if: ${{ env.NPM_TOKEN != '' }}
-        run: npm publish dist/ngx-local-vault --access public
+        working-directory: dist/ngx-local-vault
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
