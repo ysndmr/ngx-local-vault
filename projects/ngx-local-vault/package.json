@@ -1,7 +1,23 @@
 {
   "name": "ngx-local-vault",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
+  "homepage": "https://ysndmr.github.io/ngx-local-vault/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ysndmr/ngx-local-vault.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysndmr/ngx-local-vault/issues"
+  },
+  "keywords": [
+    "angular",
+    "signals",
+    "localstorage",
+    "sessionstorage",
+    "encryption",
+    "storage"
+  ],
   "peerDependencies": {
     "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0",
     "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0"

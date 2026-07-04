@@ -51,6 +51,8 @@ session.set('jwt-goes-here');
 
 ## Demo
 
+**Live:** https://ysndmr.github.io/ngx-local-vault/
+
 `projects/demo-app` is a live showcase: a theme switcher backed by `watchSignal()`, and a TTL demo that saves a mock profile, shows the encrypted ciphertext sitting in `localStorage` next to the decrypted reactive value, and lets you watch it auto-delete after 60 seconds.
 
 ```bash

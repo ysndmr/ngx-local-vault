@@ -2,6 +2,9 @@
 
 Reactive, encrypted browser storage for Angular — built on Signals, under 2KB gzipped, zero runtime dependencies.
 
+**Live demo:** https://ysndmr.github.io/ngx-local-vault/
+**Source:** https://github.com/ysndmr/ngx-local-vault
+
 ## Install
 
 ```bash
