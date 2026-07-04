@@ -1,0 +1,79 @@
+<main class="page">
+  <header class="topbar">
+    <span class="brand">ngx-local-vault</span>
+    <button type="button" class="theme-toggle" (click)="toggleTheme()">
+      {{ theme() === 'dark' ? '🌙 Dark' : '☀️ Light' }}
+    </button>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">&lt; 2KB gzipped · zero dependencies · SSR-safe</p>
+    <h1>Reactive, encrypted browser storage for Angular Signals.</h1>
+    <p class="lede">
+      ngx-local-vault wraps localStorage and sessionStorage in a WritableSignal. Read it, write
+      it, forget about persistence — encryption and TTL expiry happen automatically.
+    </p>
+  </section>
+
+  <section class="demo-grid">
+    <article class="card">
+      <h2>01 — Reactive theme switcher</h2>
+      <p class="dim">
+        Backed by <code>watchSignal('theme', 'light')</code>. Refresh the page — the theme
+        sticks, instantly, no flash.
+      </p>
+      <button type="button" class="primary" (click)="toggleTheme()">
+        Switch to {{ theme() === 'dark' ? 'light' : 'dark' }} mode
+      </button>
+      <p class="current-value">Current value: <strong>{{ theme() }}</strong></p>
+    </article>
+
+    <article class="card">
+      <h2>02 — Secure data with TTL</h2>
+      <p class="dim">
+        Save a mock profile. It's encrypted at rest and self-destructs after 60 seconds.
+      </p>
+
+      <form class="profile-form" (submit)="$event.preventDefault(); saveProfile()">
+        <input type="text" placeholder="Name" [value]="nameInput()" (input)="onNameInput($event)" />
+        <input
+          type="text"
+          placeholder="Token"
+          [value]="tokenInput()"
+          (input)="onTokenInput($event)"
+        />
+        <button type="submit" class="primary">Save with 60s TTL</button>
+      </form>
+
+      @if (profile(); as p) {
+        <div class="profile-live">
+          <p class="dim">Decrypted, reactive value your app sees:</p>
+          <pre class="code-block">{{ p | json }}</pre>
+          <p class="countdown">Expires in {{ secondsLeft() }}s</p>
+        </div>
+      } @else {
+        <p class="dim">No active session.</p>
+      }
+
+      <div class="raw-view">
+        <p class="dim">Raw localStorage['demo_profile']:</p>
+        <pre class="code-block cipher">{{ rawStorage() }}</pre>
+      </div>
+    </article>
+  </section>
+
+  <section class="snippets">
+    <h2>The entire API</h2>
+
+    <pre class="code-block">provideVault({{ '{' }} prefix: 'app_', encryptionKey: 'my-secret' {{ '}' }})</pre>
+
+    <pre class="code-block">theme = vault.watchSignal('theme', 'light');
+theme.set('dark');</pre>
+
+    <pre class="code-block">token = vault.watchSignal('token', null, {{ '{' }} expiresIn: '1m' {{ '}' }});</pre>
+  </section>
+
+  <footer class="footer">
+    <p>MIT licensed · Built with Angular Signals</p>
+  </footer>
+</main>
