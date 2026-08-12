@@ -65,6 +65,14 @@ npm start
 
 `npm start` serves `demo-app`; the library must be built first since the app imports `ngx-local-vault` from its built output (`dist/ngx-local-vault`), not the source directly — standard Angular library-workspace convention.
 
+## Security model
+
+The encryption here is **obfuscation, not a security boundary.** The key lives in your app's bundle (or wherever you configure `encryptionKey`), so anyone with access to the running page — devtools, a browser extension, an XSS payload — can recover it just like they could any other client-side secret. This library does not, and cannot, protect data from an attacker who already controls the browser session.
+
+What it does protect against is **casual, incidental exposure**: data no longer sits in `localStorage` as plain, human-readable JSON for a screen share, a saved HAR file, or a storage-reading browser extension to pick up at a glance. It raises the bar from "trivial to read" to "requires deliberate effort," nothing more.
+
+Don't use this to store data you wouldn't be OK with the end user (or anything running in their browser) eventually reading — API secrets, other users' data, anything that needs real confidentiality. For that, encryption has to happen server-side, with a key the client never sees.
+
 ## Publishing (maintainer)
 
 1. Log in to npm once, locally:
